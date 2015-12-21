@@ -1,0 +1,13 @@
+<ion-view title="Favorite Bars" cache-view="false">
+   <ion-content>
+
+      <ion-list>
+         <div ng-repeat="bar in favorites.bars track by $index">
+            <ion-item href="#/tab/favorites/{{bar.id}}">
+               {{bar.name}}
+            </ion-item>
+         </div>
+      </ion-list>
+
+   </ion-content>
+</ion-view>

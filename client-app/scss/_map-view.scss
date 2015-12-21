@@ -1,0 +1,24 @@
+/*
+ * Map View Styles
+ * ------------------------------------------------------------------------------- */
+
+map {
+   display: block;
+   width: 100%;
+   height: 100%;
+}
+
+.scroll {
+   height: 100%;
+}
+
+.ion-navigate {
+   position: absolute;
+   bottom: 13px;
+   right: 20px;
+   width: 50px;
+}
+
+ion-view.pane._gmaps_cdv_ {
+   -webkit-transform: none !important; // Override ionic inline styles
+}

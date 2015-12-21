@@ -1,0 +1,30 @@
+<ion-view title="Browse">
+   <ion-content>
+
+      <ion-refresher on-refresh="browse.updateBars()"
+                     pulling-text="Pull to refresh..." refreshing-text="Refreshing!"></ion-refresher>
+
+      <ion-list class="browse-list">
+         <ion-item collection-repeat="bar in browse.bars track by $index" class="browse-repeater">
+            <a href="#/tab/browse/{{bar.place_id}}">
+
+               <div ng-if="bar.photos" class="image-container">
+                  <div class="image" style="background-image:
+                  url('{{bar.photos[0].getUrl({'maxWidth':
+                        150, 'maxHeight': 150})}}')"></div>
+               </div>
+               <div ng-if="!bar.photos" class="image-container">
+                  <div class="image no-image"></div>
+               </div>
+
+                  <div class="bar-info">
+                     <div>{{bar.name}}</div>
+                     <div class="meta">Rating: {{bar.rating}}</div>
+                     <div class="meta">Walking: {{bar.walkingDuration}}</div>
+                  </div>
+            </a>
+         </ion-item>
+      </ion-list>
+
+   </ion-content>
+</ion-view>

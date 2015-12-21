@@ -1,0 +1,21 @@
+/*
+ * Settings View Styles
+ * ------------------------------------------------------------------------------- */
+
+.circle-image {
+   display: block;
+   width: 60px;
+   height: 60px;
+   border-radius: 150px;
+   -webkit-border-radius: 150px;
+   background-color: rgba(0, 0, 0, 0.49);
+   margin: 10px 0;
+}
+
+.setting-text {
+   font-size: 18px;
+}
+
+.setting-photo {
+   margin-left: 15px;
+}

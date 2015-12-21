@@ -1,0 +1,90 @@
+/*
+ * Mixins
+ * ------------------------------------------------------------------------------- */
+
+
+/* --- Clearfix ------------------------------------------------------------------ */
+
+@mixin clearfix() {
+	&:before,
+	&:after {
+		content: " ";
+		display: table;
+	}
+	&:after {
+		content: "";
+		display: table;
+		clear: both;
+	}
+}
+
+
+
+/* --- Breakpoints --------------------------------------------------------------- */
+
+@mixin mq($breakpoint1: nil, $breakpoint2: nil) {
+
+	@if type-of($breakpoint1) != number {
+		@if $breakpoint1 == large-display {
+			@media only screen and (min-width: 1281 + px) { @content; }
+		}
+		@else if $breakpoint1 == tablet {
+			@media only screen and (min-width: 641 + px) and (max-width : 1023 + px) { @content; }
+		}
+		@else if $breakpoint1 == mobile {
+			@media only screen and (max-width: 641 + px) { @content; }
+		}
+		@else if $breakpoint1 == mobile-portrait {
+			@media only screen and (max-width: 320 + px) { @content; }
+		}
+	}
+	@else {
+
+		@if $breakpoint2 == nil {
+			@media only screen and (max-width: $breakpoint1 + px) { @content; }
+		}
+		@else {
+			@media only screen and (min-width: $breakpoint1 + px) and (max-width: $breakpoint2 + px) { @content; }
+		}
+	}
+}
+
+@mixin min-mq($breakpoint: nil) {
+
+	@media only screen and (min-width: $breakpoint + px) {
+		@content;
+	}
+}
+
+/**
+ * @name Aspect Ratio
+ *
+ * @description
+ * Allows you to pass in aspect ratios
+ *
+ * @usage
+ *
+ * ```scss
+ * .user_profile {
+ *   @include aspect-ratio(16, 9);
+ * }
+ * ```
+ */
+@mixin aspect-ratio($width, $height) {
+	position: relative;
+
+	&:before {
+		display: block;
+		content: "";
+		width: 100%;
+		padding-top: ($height / $width) * 100%;
+	}
+
+	> .content {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+	}
+}

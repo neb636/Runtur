@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="utf-8">
+   <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+   <title></title>
+
+   <link href="assets/css/ionic.app.css" rel="stylesheet">
+
+   <!-- Google Maps & Places -->
+   <script src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyB16sGmIekuGIvYOfNoW9T44377IU2d2Es&sensor=true"></script>
+
+   <!-- ionic/angularjs js -->
+   <script src="assets/bower_components/ionic/js/ionic.bundle.js"></script>
+
+   <!-- Firebase -->
+   <script src="assets/bower_components/firebase/firebase.js"></script>
+   <script src="assets/bower_components/angularfire/dist/angularfire.min.js"></script>
+
+   <!-- Cordova Script (this will be a 404 during development) -->
+   <script src="cordova.js"></script>
+
+   <!-- Main App File -->
+   <script src="app.js"></script>
+
+   <!-- Services -->
+   <script src="services/http-interceptor-service.js"></script>
+   <script src="services/location-service.js"></script>
+   <script src="services/places-service.js"></script>
+   <script src="services/sqlite-service.js"></script>
+   <script src="services/photo-service.js"></script>
+   <script src="services/auth-service.js"></script>
+
+
+   <!-- Controllers -->
+   <script src="controllers/browse-controller.js"></script>
+   <script src="controllers/favorites-controller.js"></script>
+   <script src="controllers/bar-controller.js"></script>
+   <script src="controllers/map-controller.js"></script>
+   <script src="controllers/settings-controller.js"></script>
+   <script src="controllers/checkins-controller.js"></script>
+   <script src="controllers/login-controller.js"></script>
+
+   <!-- Directives -->
+   <script src="directives/map-directive.js"></script>
+   <script src="directives/image-load-directive.js"></script>
+   <script src="directives/map-bar-info-directive.js"></script>
+</head>
+
+<body ng-app="runtur" id="runtur">
+
+<!-- DO NOT REMOVE | Dummy Element -->
+<div id="dummy-element"></div>
+
+<ion-nav-bar class="bar-stable">
+   <ion-nav-back-button>
+   </ion-nav-back-button>
+</ion-nav-bar>
+
+<ion-nav-view></ion-nav-view>
+</body>
+</html>

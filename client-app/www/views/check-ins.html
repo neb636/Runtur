@@ -1,0 +1,14 @@
+<ion-view title="Check Ins">
+   <ion-content>
+
+      <ion-list>
+         <div ng-repeat="checkIn in checkIns.all track by $index">
+            <ion-item href="#/tab/browse/{{checkIn.barId}}">
+               {{checkIn.barName}}
+               {{checkIn.dateTime}}
+            </ion-item>
+         </div>
+      </ion-list>
+
+   </ion-content>
+</ion-view>
