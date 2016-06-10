@@ -7,4 +7,3 @@ plugins/
 .idea/
 www/assets/bower_componets
 npm-debug.log
-client-app/typings/
