@@ -1,0 +1,33 @@
+
+<ion-navbar *navbar>
+    <ion-title>
+        Browse
+    </ion-title>
+</ion-navbar>
+
+<ion-content>
+
+
+    <ion-refresher (start)="updateBars()">
+        <ion-refresher-content></ion-refresher-content>
+    </ion-refresher>
+
+    <ion-list>
+
+        <ion-item *ngFor="let bar of bars">
+
+            <a href="#/tab/browse/{{bar.place_id}}">
+
+                <ion-thumbnail item-left>
+                    <img src="{{bar.photo}}">
+                </ion-thumbnail>
+
+                <h2>{{bar.name}}</h2>
+
+                <p>Rating: {{bar.rating}}</p>
+
+            </a>
+
+        </ion-item>
+    </ion-list>
+</ion-content>
