@@ -18,8 +18,6 @@ export class Browse {
 
         barsStore.subscribe(data => {
             this.bars = data.nearbyBars;
-
-            console.log(_.cloneDeep(barsStore))
         });
     }
 
